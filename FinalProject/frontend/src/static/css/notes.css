@@ -1,0 +1,131 @@
+/* https://stackoverflow.com/questions/53734426/how-do-you-add-custom-styling-to-a-tab-when-its-active-in-bootstrap-4 */
+.nav-tabs .nav-link.active {
+  background: #733791;
+}
+
+.n-tabs {
+  border-bottom: solid;
+}
+
+.n-tabs, .nav-tabs, .nav-tabs .nav-link:hover, .nav-tabs .nav-link.active {
+  border-color: #733791;
+}
+
+.n-tabs, .nav-tabs {
+  border-width: 4px;
+}
+
+.nav-link, .nav-tabs .nav-link:hover, .nav-tabs .nav-link.active {
+  color: white;
+}
+
+/* ICON CSS */
+
+.icon {
+  font-size: 30px;
+}
+
+.tab-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.tab-btn:active {
+  background-color: gray;
+}
+
+/* NOTE CSS */
+.notes {
+  margin-left: calc(100vw * 0.15);
+  margin-right: calc(100vw * 0.15);
+}
+
+.n-title {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+form .noteTitle {
+  border: none;
+  background: transparent;
+  outline: none;
+  color: white;
+}
+
+.userNotes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+#colorSelector {
+  margin-bottom: 11px;
+}
+
+.colorDiv {
+  margin-left: 2rem;
+}
+
+.highlightDiv {
+  text-align: center;
+}
+
+.highlightDiv input {
+  margin-bottom: 10px;
+}
+
+.tab-pane div {
+  margin-top: 0.5rem;
+}
+
+p:focus, span:focus {
+  /* outline-color: #222831; */
+  outline-style: solid;
+  outline-color: #222831;
+}
+
+/* Using Modal CSS from Sean */
+
+
+.button {
+  background-color: #733791;
+
+  width: 70px;
+}
+
+.modal-content {
+  background-color: #2A313D;
+}
+
+/* https://stackoverflow.com/questions/51781734/i-want-to-remove-horizontal-line-from-the-modal-body-and-footer */
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+.modal-backdrop, .icon-btn {
+  background-color: transparent;
+}
+
+.icon-btn, .modal-btn {
+  border: none;
+  border-radius: 0px;
+}
+
+#control {
+  cursor: pointer;
+  position: absolute;
+}
+
+#control::before {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 2px;
+  width: max-content; height: 20px;
+}

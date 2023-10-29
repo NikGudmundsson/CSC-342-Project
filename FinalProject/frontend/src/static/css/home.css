@@ -1,0 +1,92 @@
+/* wide screen */
+@media (min-width: 1200px) {  
+  .sidebar {
+    width: 250px;
+  }
+
+  .side-btn {
+    text-align: start;
+    font-size: 18px;
+  }
+
+  .fs-dir {
+    max-width: calc(100vw - 450px);
+  }
+}
+
+/* smaller screen */
+@media (max-width: 1199px) {  
+  .side-greet {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .side-btn {
+    font-size: 30px;
+  }
+
+  .side-text {
+    display: none;
+  }
+
+  .fs-dir {
+    max-width: calc(100vw - 250px);
+  }
+}
+
+/* common css between view sizes */
+.sidebar {
+  background-color: #2A313D;
+  height: 100vh;
+}
+
+/* file dir */
+.fs-dir {
+  max-height: calc(100vh - 108px);
+}
+
+.fs-icon {
+  font-size: 50px;
+}
+
+.circle-btn {
+  border: none;
+  border-radius: 50%;
+
+  height: 80px;
+  width: 80px;
+}
+
+/* common css btw sidebar & file */
+.side-btn, .file-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.file-btn:hover {
+  background-color: #383e46;
+}
+
+.side-btn:active, .file-btn:active {
+  background-color: gray;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+/* hidden css */
+.menu {
+  background-color: #4e535a;
+  width: 125px;
+  display: none;
+}
+
+.button-delete, .button-delete:hover {
+  background-color: #E94560;
+}
+
+.button-delete:active {
+  background-color: #DF2E38;
+}

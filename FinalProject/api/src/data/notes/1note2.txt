@@ -1,0 +1,4 @@
+
+        <p id="p1" contenteditable="true">Add <span style="background-color:#ea1010">your not</span>es<span style="color:#0bea25"> h<span style="background-color:#e01010">er</span>e</span>!</p>
+        <template><button id="control" class="button">Color</button></template>
+      

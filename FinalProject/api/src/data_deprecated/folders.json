@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Folder 1",
+    "contents": ["Image.png", "Folder1A"]
+  },
+  {
+    "name": "Folder 2",
+    "contents": ["Folder2A", "Folder2B"]
+  }
+]

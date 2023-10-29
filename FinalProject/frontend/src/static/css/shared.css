@@ -1,0 +1,43 @@
+/* https://colorhunt.co/palette/dddddd22283130475ef05454 */
+body {
+  background-color: #222831;
+  font-family: century-gothic;
+}
+
+.txt-color {
+  color: white;
+}
+
+.warn {
+  color: #E94560;
+}
+
+.button-primary, .button-primary:hover {
+  background-color: #733791;
+}
+
+.button-primary:active {
+  background-color: #4D2561;
+}
+
+.modal-content {
+  background-color: #2A313D;
+}
+
+/* https://stackoverflow.com/questions/51781734/i-want-to-remove-horizontal-line-from-the-modal-body-and-footer */
+.modal-header {
+  border-bottom: 0 none;
+}
+
+.modal-footer {
+  border-top: 0 none;
+}
+
+.icon-btn {
+  background-color: transparent;
+}
+
+.icon-btn, .modal-btn {
+  border: none;
+  border-radius: 0px;
+}

@@ -1,0 +1,4 @@
+
+        <p id="p1" contenteditable="true">Add <span style="color:#04d8e7">your notes</span> here<span style="background-color:#d81818">!dsafadsf</span>jdsa<span style="background-color:#edc80c">faldsakjf</span>ds ads fjldsjf This is a note dfjdsajfldsajfdsakjf dsfsda fsad jfsad kjfldsakjf sakfd jsakjfd dsakfj sadkjf sad jfsad kjfsadkjf dsa kjfsa jf</p>
+        <template><button id="control" class="button">Color</button></template>
+      

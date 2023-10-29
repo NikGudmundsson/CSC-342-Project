@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - NFTS</title>
+
+  <!-- Imported Fonts: Pacifico, Century Gothic -->
+  <!-- https://stackoverflow.com/questions/55926267/use-century-gothic-or-other-fonts-on-website -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+  <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css"> 
+
+  <!-- Bootstrap 5.3 css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <!-- Bootstrap 5.3 js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <!-- Bootstrap 5.3 icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  
+  <link rel="stylesheet" href="./css/shared.css">
+  <link rel="stylesheet" href="./css/home.css">
+
+  <script src="./js/common.js" type="module"></script>
+  <script src="./js/home.js" type="module"></script>
+
+  
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#222831">
+
+
+</head>
+
+<body class="txt-color d-flex">
+  <!-- SIDEBAR -->
+  <div class="p-3 d-flex flex-column justify-content-between sidebar">
+    <div>
+      <div class="text-center fs-3 fw-semibold txt-color side-greet">
+        Hello
+        <div id="userID"></div>
+      </div>
+        
+      <div class="border-top mt-3 mb-5"></div>
+
+      <button id="side-home" class="w-100 mb-5 p-2 txt-color side-btn">
+        <i class="bi bi-journal"></i>
+        <span class="side-text">&nbsp;Home Folder</span>
+      </button>
+
+      <button id="side-shared" class="w-100 mb-5 p-2 txt-color side-btn">
+        <i class="bi bi-cloud-fill"></i>
+        <span class="side-text">&nbsp;Shared Folder</span>
+      </button>
+    </div>
+
+    <button id="side-logout" class="w-100 mb-5 p-2 txt-color side-btn">
+      <i class="bi bi-box-arrow-left"></i>
+      <span class="side-text">&nbsp;Logout</span>
+    </button>
+  </div>
+
+  <!-- FILE DIRECTORY -->
+  <div class="position-relative flex-fill mx-5">
+    <!-- Directory name -->
+    <div id="fs-name" class="my-4 fs-1"></div>
+
+    <!-- VISUAL FILES -->
+    <div id="fs-dir" class="d-flex flex-wrap overflow-y-auto fs-dir"></div>
+
+    <!-- ADD BUTTON -->
+    <button class="fs-1 position-absolute end-0 bottom-0 mb-5
+    circle-btn button-primary txt-color"
+    data-bs-toggle="modal" data-bs-target="#addModal">
+      <i class="bi bi-plus-lg"></i>
+    </button>
+  </div>
+
+  <!-- BELOW ARE HIDDEN ITEMS -->
+
+  <div id="alt-menu" class="menu position-fixed">
+    <!-- <button class="d-block w-100 text-start fs-6 my-1 txt-color side-btn"
+    data-bs-toggle="modal" data-bs-target="#renameModal">Rename file</button> -->
+    <button class="d-block w-100 text-start fs-6 my-1 txt-color side-btn"
+    data-bs-toggle="modal" data-bs-target="#shareModal">Share file</button> 
+    <button class="d-block w-100 text-start fs-6 my-1 txt-color side-btn warn"
+    data-bs-toggle="modal" data-bs-target="#deleteModal">Delete file</button>    
+  </div>
+
+  <!-- Add Modal -->
+  <div class="modal fade txt-color" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Create file</h1>
+          <button class="txt-color icon-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">Filename:</div>
+              <div class="col">
+                <input id="add-filename" type="text">
+              </div>
+            </div>
+
+            <div id="add-warn" class="row-sm-3 mt-3 warn"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="add-btn" class="button-primary modal-btn txt-color px-3 py-2">Create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rename Modal -->
+  <div class="modal fade txt-color" id="renameModal" tabindex="-1" aria-labelledby="renameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Rename file</h1>
+          <button class="txt-color icon-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">Filename:</div>
+              <div class="col">
+                <input id="rename-filename" type="text">
+              </div>
+            </div>
+
+            <div class="row-sm-3 mt-3 warn"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="rename-btn" class="button-primary modal-btn txt-color px-3 py-2">Rename</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Modal -->
+  <div class="modal fade txt-color" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Share file</h1>
+          <button class="txt-color icon-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-3">Username:</div>
+              <div class="col">
+                <input id="share-user" type="text">
+              </div>
+            </div>
+
+            <div class="row-sm-3 mt-3 warn"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="share-btn" class="button-primary modal-btn txt-color px-3 py-2">Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Modal -->
+  <div id="deleteModal" class="modal fade txt-color" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Delete file</h1>
+          <button class="txt-color icon-btn" data-bs-dismiss="modal" aria-label="Close">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="warn">Are you sure you want to delete this file?</div>
+            </div>
+
+            <div class="row-sm-3 mt-3 warn"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="delete-btn" class="button-delete modal-btn txt-color px-3 py-2" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

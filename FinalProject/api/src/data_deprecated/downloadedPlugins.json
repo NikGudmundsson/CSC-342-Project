@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Latex",
+        "active": true
+    },
+    {
+        "name": "Graphs",
+        "active": false
+    },
+    {
+        "name": "CodeBlocks",
+        "active": false
+    }
+]
